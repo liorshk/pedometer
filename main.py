@@ -263,7 +263,16 @@ if __name__ == "__main__":
         filtered_df = filter_noise(df)
 
         peak_thres = get_peak_thres(filtered_df,i-1)
+
+        # peak detection
+        from scipy.signal import argrelmax,find_peaks_cwt
+        r = lp.butter_lowpass_filter(filtered_df.magnitude, cutoff, fs, order)
+        peaks = find_peaks_cwt(r, np.arange(0.5,1))
+        peaks2 = argrelmax(r)
+
         print("{}: True number of steps: {}, Predicted: {}, Error Squared: {}".format(i, true_steps_count[i - 1], peak_thres, (true_steps_count[i - 1] - peak_thres) ** 2))
+        # Error squared of other methods
+        print(" - Error Squared(find_peaks_cwt): {},  Error Squared(argrelmax): {}".format((true_steps_count[i - 1] - len(peaks)) ** 2,(true_steps_count[i - 1] - len(peaks2[0])) ** 2))
 
     #print("MSE: {}".format(mean_squared_error(s,peaklist)))
 
