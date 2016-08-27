@@ -1,11 +1,6 @@
-%matplotlib inline
-import math
-import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 import os
 import os.path
-from sklearn.metrics import mean_squared_error
 import math
 import numpy as np
 from scipy.signal import butter, lfilter, freqz
@@ -19,7 +14,7 @@ def butter_lowpass(cutoff, sample_freq, order=6):
     :param sample_freq: Samples per second
     :return: Numerator (b) and denominator (a) polynomials of the IIR filter
     """
-    
+
     #Nyquist frequency = half the sampling frequency
     nyq = 0.5 * sample_freq
     normal_cutoff = cutoff / nyq
@@ -110,14 +105,14 @@ def filter_noise(df,samples_per_sec):
 
     peaks = argrelmax(np.array(df.y))[0]
 
-    df['is_peak'] = 0 
-    
+    df['is_peak'] = 0
+
     for i in range (0,len(peaks)):
         if df.y[peaks[i]] > df.y[peaks].mean():
             df.loc[peaks[i],'is_peak']=1
 
     index = return_end_of_walking_index(df,samples_per_sec*10,130,0,0,501)
-    
+
     df_filtered = df[int(index - (samples_per_sec*NUM_OF_SEC_BEFORE)): int(index + samples_per_sec* NUM_OF_SEC_AFTER)]
 
     return df_filtered
@@ -134,61 +129,112 @@ NUM_OF_FILES = 30
 NUM_OF_SEC_BEFORE = 11.2
 NUM_OF_SEC_AFTER = 0.2
 
+displayGraph = False
 
-if __name__ == "__main__":
-   
-    mse = 0.0
-    for i in range(1,NUM_OF_FILES+1):
+##### Detect Step Count ######
 
-        # Read the file
-        df = pd.read_csv(os.path.join(dir,'Train_' + str(i) + '.csv'))
+total_errors = []
+step_counts = []
+for i in range(1,NUM_OF_FILES+1):
 
-        # Change column names, parse dates and create magnitude column
-        df['x']=df["load.txt.data.x"]
-        df['y']=df["load.txt.data.y"]
-        df['z']=df["load.txt.data.z"]
+    # Read the file
+    df = pd.read_csv(os.path.join(dir,'Train_' + str(i) + '.csv'))
 
-        df['magnitude'] = df.apply(lambda row: math.sqrt((row.x)**2 + (row.y)**2 + (row.z)**2),axis=1)
-        df['time']= pd.to_datetime(df['epoch'], format='%Y-%m-%d %H:%M:%S.%f')
+    # Change column names, parse dates and create magnitude column
+    df['x']=df["load.txt.data.x"]
+    df['y']=df["load.txt.data.y"]
+    df['z']=df["load.txt.data.z"]
 
-        # Drop duplicates
-        if i in duplicateTrainFiles:
-            df = df.drop_duplicates(subset=['x','y','z']).reset_index(drop=True)
+    df['magnitude'] = df.apply(lambda row: math.sqrt((row.x)**2 + (row.y)**2 + (row.z)**2),axis=1)
+    df['time']= pd.to_datetime(df['epoch'], format='%Y-%m-%d %H:%M:%S.%f')
 
-        # Calculate the samples per second in the dataframe
-        samples_per_sec = calculate_num_of_sampling_per_sec(df)
-        
-        # Get only the relevant data points out of the data frame
-        filtered_df = filter_noise(df,samples_per_sec)
+    # Drop duplicates
+    if i in duplicateTrainFiles:
+        df = df.drop_duplicates(subset=['x','y','z']).reset_index(drop=True)
 
-        # Butterworth filter
-        b, a = butter_lowpass(cutoff, samples_per_sec)
-        
-        # Low filter
-        magnitude_smoothed = lfilter(b, a, filtered_df.magnitude) 
-        
-        # Get peaks
-        peaks = argrelmax(magnitude_smoothed)[0]  
-        
-        # Get peak values
-        peak_values = magnitude_smoothed[peaks]        
+    # Calculate the samples per second in the dataframe
+    samples_per_sec = calculate_num_of_sampling_per_sec(df)
 
-        t = np.linspace(0, 15.0, magnitude_smoothed.size, endpoint=False) 
+    # Get only the relevant data points out of the data frame
+    filtered_df = filter_noise(df,samples_per_sec)
 
-        error = ((len(peaks)) - (true_steps_count[i - 1])) ** 2
-        
-        mse += error
-        print("{}: True number of steps: {}, Predicted: {}, Error Squared: {}".format(i, true_steps_count[i - 1], len(peaks), error))
-        
-        if error > 1:
+    # Butterworth filter
+    b, a = butter_lowpass(cutoff, samples_per_sec)
 
-            plt.figure(figsize=(20,20))
-            plt.plot(t, magnitude_smoothed, 'b-', linewidth=2)
+    # Low filter
+    magnitude_smoothed = lfilter(b, a, filtered_df.magnitude)
 
-            plt.plot(t[peaks], magnitude_smoothed[peaks], 'ro', linewidth=2)
+    # Get peaks
+    peaks = argrelmax(magnitude_smoothed)[0]
 
-            plt.show()
-        
+    # Get peak values
+    peak_values = magnitude_smoothed[peaks]
 
-    print("\t MSE: {}".format(mse / float(NUM_OF_FILES)))
+    t = np.linspace(0, 15.0, magnitude_smoothed.size, endpoint=False)
 
+    error = ((len(peaks)) - (true_steps_count[i - 1])) ** 2
+
+    total_errors.append(error)
+    step_counts.append(len(peaks))
+    print("{}: True number of steps: {}, Predicted: {}, Error Squared: {}".format(i, true_steps_count[i - 1], len(peaks), error))
+
+    if displayGraph:
+        plt.figure(figsize=(20,20))
+        plt.plot(t, magnitude_smoothed, 'b-', linewidth=2)
+
+        plt.plot(t[peaks], magnitude_smoothed[peaks], 'ro', linewidth=2)
+
+        plt.show()
+
+
+print("\t MSE for Step Count: {}".format(np.average(total_errors)))
+
+
+##### Detect Walking Distance ######
+from sklearn.svm import SVR
+from sklearn.cross_validation import train_test_split
+from sklearn.grid_search import GridSearchCV
+from sklearn.linear_model import Lasso,Ridge,LinearRegression
+from sklearn.metrics import mean_squared_error
+
+
+data = np.zeros((len(summarySession),1))
+data[:,0] = np.array(step_counts)
+target = summarySession.DistanceCovered
+
+print("Grid Search")
+
+X_train, X_test, y_train, y_test = train_test_split(
+    data, target, test_size=0.2, random_state=1)
+
+svr = GridSearchCV(SVR(), cv=10,
+                   param_grid={"kernel":['linear'],
+                               "C": np.arange(0.1,50,0.1),
+                               "epsilon":np.arange(0.01,1,0.05)}
+                   ,scoring="mean_squared_error")
+
+l = GridSearchCV(Lasso(), cv=10,
+                  param_grid={"alpha": np.arange(0.1,50,0.1)}
+                  ,scoring="mean_squared_error")
+
+r = GridSearchCV(Ridge(), cv=10,
+                  param_grid={"alpha": np.arange(0.1,50,0.1)}
+                  ,scoring="mean_squared_error")
+lr = GridSearchCV(LinearRegression(), cv=10,
+                  param_grid={"normalize":[True,False]}
+                  ,scoring="mean_squared_error")
+
+
+clfs = [svr,l,r,lr]
+
+for clf in clfs:
+    clf.fit(X_train, y_train)
+
+    print("\nBest parameters set found for: \n" + str(clf))
+
+    print(clf.best_params_)
+
+    print("\n MSE:")
+    y_true, y_pred = y_test, clf.predict(X_test)
+
+    print(mean_squared_error(y_true,y_pred))
