@@ -2,19 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a97c70-bfb4-45df-bb7f-e926c0072713" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_14.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_14.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_15.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_15.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_16.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_16.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_17.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_17.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_18.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_18.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_19.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_19.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_20.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_20.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_21.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_21.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_22.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_22.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_23.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_23.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_24.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_24.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_25.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_25.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingFiles/Train_26.csv" afterPath="$PROJECT_DIR$/TrainingFiles/Train_26.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Code/test_evaluate.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_10_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_11_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_12_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_13_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_14_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_14_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_15_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_15_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_16_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_16_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_17_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_17_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_18_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_18_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_19_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_19_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_1_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_20_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_20_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_21_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_21_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_22_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_22_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_23_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_23_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_24_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_24_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_25_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_25_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_26_doubled.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_26_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_27_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_28_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_29_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_2_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_30_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_3_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_4_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_5_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_6_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_7_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_8_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Train_9_filtered.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/Untitled2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/lowpass.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/omri.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/remove_doubles.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/rename.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrainingFiles/timestamp.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lowpass.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="pedometer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,24 +76,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Untitled2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TrainingFiles/Untitled2.py">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Code/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7307692">
-              <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="omri.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TrainingFiles/omri.py">
+      <file leaf-file-name="test_evaluate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Code/test_evaluate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="45" column="16" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Code/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5564648">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,8 +118,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/TrainingFiles/Untitled2.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Code/train.py" />
+        <option value="$PROJECT_DIR$/Code/test.py" />
       </list>
     </option>
   </component>
@@ -144,7 +199,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.Untitled2">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\University\pedometer\Code" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -175,6 +235,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="pedometer" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TrainingFiles/Untitled2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="train" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pedometer" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pedometer" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -301,14 +395,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.Untitled2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.train" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.Untitled2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.train" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Untitled2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -329,11 +427,17 @@
       <option name="project" value="LOCAL" />
       <updated>1471970211069</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Including distance prediction">
+      <created>1472331569424</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1472331569424</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -389,17 +493,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added 2 other methods of peak detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 2 other methods of peak detection" />
+    <MESSAGE value="Including distance prediction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Including distance prediction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="r[30:45]" language="Python" />
         <watch expression="r.size" language="Python" />
         <watch expression="len(peaks2[0])" language="Python" />
+        <watch expression="summarySession[summarySession.SessionNumber == i].StepsCounts[0]" language="Python" />
+        <watch expression="file.split(&quot;.&quot;)[0]" language="Python" />
+        <watch expression="summarySession[summarySession.FileName == file.split(&quot;.&quot;)[0]].StepsCounts.values[0]" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -452,40 +560,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lowpass.py">
+    <entry file="file://$PROJECT_DIR$/Code/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7806874">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.307692">
-          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#6372#7033#0" expanded="false" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrainingFiles/Untitled2.py">
+    <entry file="file://$PROJECT_DIR$/Code/test_evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7307692">
-          <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrainingFiles/omri.py">
+    <entry file="file://$PROJECT_DIR$/Code/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="16" />
-          <folding />
+        <state vertical-scroll-proportion="0.5564648">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
