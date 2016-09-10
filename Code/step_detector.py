@@ -3,12 +3,11 @@ import os
 import os.path
 import math
 import numpy as np
-from scipy.signal import butter, lfilter
+from scipy.signal import butter, lfilter,argrelmax
 import matplotlib.pyplot as plt
-from scipy.signal import argrelmax
 
-NUM_OF_SEC_BEFORE = 11.2
-NUM_OF_SEC_AFTER = 0.2
+NUM_OF_SEC_BEFORE = 11.2		#1.2 more sec before walking for spaces
+NUM_OF_SEC_AFTER = 0.2			#0.2 sec more in the end for spaces
 
 def butter_lowpass(cutoff, sample_freq, order=6):
     """
@@ -47,51 +46,52 @@ def distance_from_mean(series,divide_param):
     res = series.mean() + (series.std()/divide_param)
     return res
 
-# TODO: Comment and explain
 def return_end_of_walking_index(df,len_of_peace,max_space_between_peaks,starting_index,cur_max,curr_end):
     """
-    :param df:
-    :param len_of_peace:
-    :param max_space_between_peaks:
-    :param starting_index:
-    :param cur_max:
-    :param curr_end:
-    :return:
+    :param df: the data frame
+    :param len_of_peace: len of piece needed (10 seconds in number of samplings)
+    :param max_space_between_peaks: maximum space allowed between to peaks in the data frame to be considered as walking
+    :param starting_index: start index of walking piece
+    :param cur_max: current maximum peaks counted in a 10 seconds piece
+    :param curr_end: current end index of walking
+    :return: returns the end index of the walikng 10 sec piece
     """
-    start_index = starting_index
+    starting_index = int(starting_index)
+    len_of_peace = int(len_of_peace)
     end_index = starting_index + len_of_peace
     counter = 0
     last_peak = starting_index
 
+    #if data frame length is less than start index + 10 sec piece, then return
     if len(df)< starting_index + len_of_peace:
         return curr_end
+	
+    #else, start checking for 10 second peace with maximum peaks
+	#first iteration over first 10 seconds
 
     for i in range (starting_index,starting_index + len_of_peace+1):
         counter = counter + df.is_peak[i]
         if df.is_peak[i]==1:
-            #print i
+            # if whe found after new peak further from the last peak - break current walk piece and call recursivly
             if (i - last_peak) > max_space_between_peaks:
-                #print str(i) + ' split'
                 return return_end_of_walking_index(df,len_of_peace,max_space_between_peaks,i-1,counter,last_peak)  #was instead of cur_end - last peak
             last_peak=i
-
+	
+    ## have we found more peak than we had found till now?
     if counter > cur_max:
         cur_max = counter
 
-    #print cur_max
-    #print last_peak
-
+    #second iteration over left indexes
     for i in range(starting_index+len_of_peace+2,len(df)):
         if df.is_peak[i]==1:
+            # if whe found after new peak further from the last peak - break current walk piece and call recursivly
             if (i - last_peak) > max_space_between_peaks:
-                #print str(i) + 'split2, curr_end = ' + str(end_index)
-                #print 'max = ' + str(cur_max)
                 return return_end_of_walking_index(df,len_of_peace,max_space_between_peaks,i-1,cur_max,end_index)
             last_peak = i
 
         counter = counter - df.is_peak[i-len_of_peace] + df.is_peak[i]
+        ## have we found more peak than we had found till now?
         if counter > cur_max:
-            #print i
             cur_max = counter
             end_index = i
             start_index = i-len_of_peace

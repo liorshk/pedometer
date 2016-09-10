@@ -3,6 +3,8 @@ Pedometer
 
 #### Prerequisites
 
+
+ - python 2.7
  - numpy
  - pandas
  - scipy
@@ -22,7 +24,7 @@ Pedometer
 
 #### Train
 
-    python train.py
+    python Code/train.py
 
 	Output: classifier.pkl
 	
@@ -56,4 +58,4 @@ Grid Search Results:
 	
 #### Test
 
-    python test.py
+    python Code/test.py
